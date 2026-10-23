@@ -7,6 +7,8 @@
 <meta name="description" content="Fast, lightweight apps by maxpowerart: Kwalendar, GitKwaken, ekwalizer and KwanimeGo.">
 <meta name="google-site-verification" content="M5b13w_K7CnUdJYydv9JTYd32-TfviYbv-GR536Gmyg">
 <link rel="icon" href="assets/kwalendar.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://maxpowerart.github.io/?lang=en">
+<link rel="alternate" hreflang="ru" href="https://maxpowerart.github.io/?lang=ru">
 <style>
   :root { --navy: #0F2240; --teal: #158C82; --orange: #E07C00; --text: #1F2937; --muted: #5A6B86; --line: #E3E8EE; --bg: #F6F8FA; --card: #FFFFFF; }
   @media (prefers-color-scheme: dark) {
@@ -16,9 +18,13 @@
   body { margin: 0; font: 16px/1.55 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); }
   header { background: #0F2240; color: #fff; }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  header .wrap { padding-top: 40px; padding-bottom: 36px; }
+  header .wrap { padding-top: 40px; padding-bottom: 36px; position: relative; }
   header h1 { margin: 0 0 6px; font-size: 32px; letter-spacing: -0.01em; }
   header p { margin: 0; color: #A3B0C8; font-size: 17px; }
+  .lang { position: absolute; top: 20px; right: 20px; display: flex; border: 1px solid #24365E; border-radius: 4px; overflow: hidden; }
+  .lang button { background: transparent; color: #A3B0C8; border: 0; padding: 3px 10px; font: 600 12px/1.6 inherit; font-family: inherit; cursor: pointer; letter-spacing: 0.05em; }
+  .lang button + button { border-left: 1px solid #24365E; }
+  .lang button[aria-pressed="true"] { background: #158C82; color: #fff; }
   h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 36px 0 12px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 14px; }
   .app { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
@@ -34,70 +40,74 @@
   .links a:hover { text-decoration: underline; }
   footer { margin: 48px 0 40px; font-size: 14px; color: var(--muted); }
   footer a { color: var(--teal); }
-  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .lang { top: 12px; right: 12px; } }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
     <h1>maxpowerart</h1>
-    <p>Fast, lightweight apps — no servers of mine, your data stays on your devices.</p>
+    <p data-i18n="tagline">Fast, lightweight apps — no servers of mine, your data stays on your devices.</p>
   </div>
 </header>
 
 <main class="wrap">
-  <h2>Open source</h2>
+  <h2 data-i18n="open">Open source</h2>
   <div class="grid">
     <div class="app">
       <img src="assets/kwalendar.svg" alt="Kwalendar icon">
       <div>
-        <h3>Kwalendar <span class="tag open">open source</span></h3>
-        <p>A fast desktop calendar for Google Calendar: several Google accounts in one window, offline access, native Windows reminders.</p>
+        <h3>Kwalendar <span class="tag open" data-i18n="tagOpen">open source</span></h3>
+        <p data-i18n="kwalendar">A fast desktop calendar for Google Calendar: several Google accounts in one window, offline access, native Windows reminders.</p>
         <div class="meta">Windows · Rust, Tauri, SolidJS</div>
         <div class="links">
-          <a href="/Kwalendar/">Website</a>
+          <a href="/Kwalendar/" data-i18n="website">Website</a>
           <a href="https://github.com/maxpowerart/Kwalendar">GitHub</a>
-          <a href="/Kwalendar/privacy.html">Privacy</a>
+          <a href="/Kwalendar/privacy.html" data-i18n="privacy">Privacy</a>
         </div>
       </div>
     </div>
     <div class="app">
       <img src="assets/gitkwaken.png" alt="GitKwaken icon">
       <div>
-        <h3>GitKwaken <span class="tag open">open source</span></h3>
-        <p>A fast, lightweight, SourceTree-style git client: starts instantly and stays smooth on huge repositories.</p>
+        <h3>GitKwaken <span class="tag open" data-i18n="tagOpen">open source</span></h3>
+        <p data-i18n="gitkwaken">A fast, lightweight, SourceTree-style git client: starts instantly and stays smooth on huge repositories.</p>
         <div class="meta">Windows, Linux · Rust, egui, Direct3D 11</div>
         <div class="links">
           <a href="https://github.com/maxpowerart/GitKwaken">GitHub</a>
-          <a href="https://github.com/maxpowerart/GitKwaken/releases/latest">Download</a>
+          <a href="https://github.com/maxpowerart/GitKwaken/releases/latest" data-i18n="download">Download</a>
         </div>
       </div>
     </div>
     <div class="app">
       <img src="assets/ekwalizer.svg" alt="ekwalizer icon">
       <div>
-        <h3>ekwalizer <span class="tag open">open source</span></h3>
-        <p>Even sound, calm nights: system-wide night mode for Android TV — one volume level for every app, so the next video doesn't blast you awake.</p>
+        <h3>ekwalizer <span class="tag open" data-i18n="tagOpen">open source</span></h3>
+        <p data-i18n="ekwalizer">Even sound, calm nights: system-wide night mode for Android TV — one volume level for every app, so the next video doesn't blast you awake.</p>
         <div class="meta">Android TV</div>
         <div class="links">
           <a href="https://github.com/maxpowerart/ekwalizer">GitHub</a>
-          <a href="https://github.com/maxpowerart/ekwalizer/releases/latest">Download</a>
+          <a href="https://github.com/maxpowerart/ekwalizer/releases/latest" data-i18n="download">Download</a>
         </div>
       </div>
     </div>
   </div>
 
-  <h2>Closed source</h2>
+  <h2 data-i18n="closed">Closed source</h2>
   <div class="grid">
     <div class="app">
       <img src="assets/kwanimego.svg" alt="KwanimeGo icon">
       <div>
-        <h3>KwanimeGo <span class="tag closed">closed source</span></h3>
-        <p>A lightweight anime client for Android TV / Google TV, Android and Windows — no browser, no server of its own.</p>
+        <h3>KwanimeGo <span class="tag closed" data-i18n="tagClosed">closed source</span></h3>
+        <p data-i18n="kwanimego">A lightweight anime client for Android TV / Google TV, Android and Windows — no browser, no server of its own.</p>
         <div class="meta">Android TV, Android, Windows</div>
         <div class="links">
-          <a href="/KwanimeGo-policy/">Website</a>
-          <a href="/KwanimeGo-policy/privacy.html">Privacy</a>
+          <a href="/KwanimeGo-policy/" data-i18n="website">Website</a>
+          <a href="/KwanimeGo-policy/privacy.html" data-i18n="privacy">Privacy</a>
         </div>
       </div>
     </div>
@@ -105,7 +115,43 @@
 </main>
 
 <footer class="wrap">
-  Contact: <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a> · <a href="https://github.com/maxpowerart">github.com/maxpowerart</a>
+  <span data-i18n="contact">Contact:</span> <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a> · <a href="https://github.com/maxpowerart">github.com/maxpowerart</a>
 </footer>
+
+<script>
+  // English is the HTML default (what crawlers and Google's checks read); Russian is applied on top.
+  const RU = {
+    tagline: 'Быстрые лёгкие приложения — без моих серверов, ваши данные остаются на ваших устройствах.',
+    open: 'Открытый код',
+    closed: 'Закрытый код',
+    tagOpen: 'открытый код',
+    tagClosed: 'закрытый код',
+    kwalendar: 'Быстрый десктопный календарь для Google Календаря: несколько аккаунтов Google в одном окне, работа офлайн, напоминания Windows.',
+    gitkwaken: 'Быстрый лёгкий git-клиент в духе SourceTree: запускается мгновенно и не тормозит на огромных репозиториях.',
+    ekwalizer: 'Ровный звук, спокойные ночи: системный ночной режим для Android TV — одна громкость для всех приложений, чтобы следующее видео не разбудило.',
+    kwanimego: 'Лёгкий аниме-клиент для Android TV / Google TV, Android и Windows — без браузера и без собственного сервера.',
+    website: 'Сайт',
+    privacy: 'Конфиденциальность',
+    download: 'Скачать',
+    contact: 'Контакты:',
+  };
+  const nodes = [...document.querySelectorAll('[data-i18n]')];
+  const EN = Object.fromEntries(nodes.map((n) => [n.dataset.i18n, n.textContent]));
+  function setLang(lang, remember) {
+    const dict = lang === 'ru' ? RU : EN;
+    for (const n of nodes) n.textContent = dict[n.dataset.i18n] ?? EN[n.dataset.i18n];
+    document.documentElement.lang = lang;
+    document.title = lang === 'ru' ? 'maxpowerart — приложения' : 'maxpowerart — apps';
+    for (const b of document.querySelectorAll('.lang button')) b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    if (remember) try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  for (const b of document.querySelectorAll('.lang button')) b.addEventListener('click', () => setLang(b.dataset.lang, true));
+  let initial = new URLSearchParams(location.search).get('lang');
+  if (initial !== 'ru' && initial !== 'en') {
+    try { initial = localStorage.getItem('lang'); } catch (e) { initial = null; }
+  }
+  if (initial !== 'ru' && initial !== 'en') initial = (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en';
+  if (initial === 'ru') setLang('ru', false);
+</script>
 </body>
 </html>
