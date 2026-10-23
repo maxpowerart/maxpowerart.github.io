@@ -3,50 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>maxpowerart</title>
-<meta name="description" content="maxpowerart — fast, lightweight apps: Kwalendar, GitKwaken, ekwalizer, KwanimeGo.">
+<title>maxpowerart — apps</title>
+<meta name="description" content="Fast, lightweight apps by maxpowerart: Kwalendar, GitKwaken, ekwalizer and KwanimeGo.">
 <!-- Google Search Console ownership of https://maxpowerart.github.io/ goes here -->
-<link rel="icon" href="/KwaSoftware/assets/kwalendar.svg" type="image/svg+xml">
+<link rel="icon" href="assets/kwalendar.svg" type="image/svg+xml">
 <style>
-  :root { --navy: #0F2240; --teal: #158C82; --text: #1F2937; --muted: #5A6B86; --line: #E3E8EE; --bg: #F6F8FA; --card: #FFFFFF; }
+  :root { --navy: #0F2240; --teal: #158C82; --orange: #E07C00; --text: #1F2937; --muted: #5A6B86; --line: #E3E8EE; --bg: #F6F8FA; --card: #FFFFFF; }
   @media (prefers-color-scheme: dark) {
-    :root { --navy: #E8EDF6; --teal: #3CBAAF; --text: #DCDDDF; --muted: #979797; --line: #3A3C42; --bg: #2B2D31; --card: #25272B; }
+    :root { --navy: #E8EDF6; --teal: #3CBAAF; --orange: #FD9921; --text: #DCDDDF; --muted: #979797; --line: #3A3C42; --bg: #2B2D31; --card: #25272B; }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font: 16px/1.55 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); padding: 24px; }
-  main { width: 100%; max-width: 560px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 32px; }
-  h1 { margin: 0 0 4px; font-size: 28px; color: var(--navy); }
-  p { margin: 0 0 20px; color: var(--muted); }
-  .icons { display: flex; gap: 10px; margin-bottom: 20px; }
-  .icons img { width: 44px; height: 44px; border-radius: 10px; }
-  ul { list-style: none; margin: 0 0 24px; padding: 0; }
-  li { padding: 8px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
-  li span { color: var(--muted); font-size: 14px; }
-  a { color: var(--teal); font-weight: 600; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .cta { display: inline-block; background: #158C82; color: #fff; padding: 10px 18px; border-radius: 6px; }
-  .cta:hover { text-decoration: none; background: #0F7A71; }
-  footer { margin-top: 20px; font-size: 14px; color: var(--muted); }
+  body { margin: 0; font: 16px/1.55 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+  header { background: #0F2240; color: #fff; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header .wrap { padding-top: 40px; padding-bottom: 36px; }
+  header h1 { margin: 0 0 6px; font-size: 32px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: #A3B0C8; font-size: 17px; }
+  h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 36px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 14px; }
+  .app { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+  .app img { width: 64px; height: 64px; border-radius: 14px; flex: 0 0 auto; }
+  .app h3 { margin: 0; font-size: 19px; color: var(--navy); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .app p { margin: 6px 0 10px; color: var(--muted); font-size: 15px; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; border: 1px solid currentColor; }
+  .tag.open { color: var(--teal); }
+  .tag.closed { color: var(--orange); }
+  .meta { font-size: 13px; color: var(--muted); }
+  .links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+  .links a { color: var(--teal); text-decoration: none; font-weight: 600; }
+  .links a:hover { text-decoration: underline; }
+  footer { margin: 48px 0 40px; font-size: 14px; color: var(--muted); }
+  footer a { color: var(--teal); }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-<main>
-  <div class="icons">
-    <img src="/KwaSoftware/assets/kwalendar.svg" alt="Kwalendar">
-    <img src="/KwaSoftware/assets/gitkwaken.png" alt="GitKwaken">
-    <img src="/KwaSoftware/assets/ekwalizer.svg" alt="ekwalizer">
-    <img src="/KwaSoftware/assets/kwanimego.svg" alt="KwanimeGo">
+<header>
+  <div class="wrap">
+    <h1>maxpowerart</h1>
+    <p>Fast, lightweight apps — no servers of mine, your data stays on your devices.</p>
   </div>
-  <h1>maxpowerart</h1>
-  <p>Fast, lightweight apps. No servers of mine — your data stays on your devices.</p>
-  <ul>
-    <li><a href="/Kwalendar/">Kwalendar</a><span>Google Calendar on Windows · open source</span></li>
-    <li><a href="https://github.com/maxpowerart/GitKwaken">GitKwaken</a><span>git client · open source</span></li>
-    <li><a href="https://github.com/maxpowerart/ekwalizer">ekwalizer</a><span>night mode for Android TV · open source</span></li>
-    <li><a href="/KwanimeGo-policy/">KwanimeGo</a><span>anime client · closed source</span></li>
-  </ul>
-  <a class="cta" href="/KwaSoftware/">All apps — KwaSoftware</a>
-  <footer>Contact: <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a></footer>
+</header>
+
+<main class="wrap">
+  <h2>Open source</h2>
+  <div class="grid">
+    <div class="app">
+      <img src="assets/kwalendar.svg" alt="Kwalendar icon">
+      <div>
+        <h3>Kwalendar <span class="tag open">open source</span></h3>
+        <p>A fast desktop calendar for Google Calendar: several Google accounts in one window, offline access, native Windows reminders.</p>
+        <div class="meta">Windows · Rust, Tauri, SolidJS</div>
+        <div class="links">
+          <a href="/Kwalendar/">Website</a>
+          <a href="https://github.com/maxpowerart/Kwalendar">GitHub</a>
+          <a href="/Kwalendar/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="app">
+      <img src="assets/gitkwaken.png" alt="GitKwaken icon">
+      <div>
+        <h3>GitKwaken <span class="tag open">open source</span></h3>
+        <p>A fast, lightweight, SourceTree-style git client: starts instantly and stays smooth on huge repositories.</p>
+        <div class="meta">Windows, Linux · Rust, egui, Direct3D 11</div>
+        <div class="links">
+          <a href="https://github.com/maxpowerart/GitKwaken">GitHub</a>
+          <a href="https://github.com/maxpowerart/GitKwaken/releases/latest">Download</a>
+        </div>
+      </div>
+    </div>
+    <div class="app">
+      <img src="assets/ekwalizer.svg" alt="ekwalizer icon">
+      <div>
+        <h3>ekwalizer <span class="tag open">open source</span></h3>
+        <p>Even sound, calm nights: system-wide night mode for Android TV — one volume level for every app, so the next video doesn't blast you awake.</p>
+        <div class="meta">Android TV</div>
+        <div class="links">
+          <a href="https://github.com/maxpowerart/ekwalizer">GitHub</a>
+          <a href="https://github.com/maxpowerart/ekwalizer/releases/latest">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Closed source</h2>
+  <div class="grid">
+    <div class="app">
+      <img src="assets/kwanimego.svg" alt="KwanimeGo icon">
+      <div>
+        <h3>KwanimeGo <span class="tag closed">closed source</span></h3>
+        <p>A lightweight anime client for Android TV / Google TV, Android and Windows — no browser, no server of its own.</p>
+        <div class="meta">Android TV, Android, Windows</div>
+        <div class="links">
+          <a href="/KwanimeGo-policy/">Website</a>
+          <a href="/KwanimeGo-policy/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
+
+<footer class="wrap">
+  Contact: <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a> · <a href="https://github.com/maxpowerart">github.com/maxpowerart</a>
+</footer>
 </body>
 </html>

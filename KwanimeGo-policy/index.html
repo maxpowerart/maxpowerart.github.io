@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KwanimeGo — personal anime player for Windows, Android and Android TV</title>
+<meta name="description" content="KwanimeGo is a personal anime player for Windows, Android and Android TV: catalog, built-in player, watch list, history and progress, optionally synced through your own Google Drive.">
+<!-- Google Search Console ownership: replace the token below with the one Search Console gives you. -->
+<meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<style>
+  @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url(assets/fredoka-latin-600-normal.woff2) format('woff2'); }
+  :root { --navy: #0F2240; --aqua: #2EC4B6; --teal: #158C82; --orange: #FF9F1C; --mint: #E6F5F4; --text: #1F2937; --muted: #5A6B86; --line: #E3E8EE; --bg: #F6F8FA; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+  a { color: var(--teal); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { background: var(--navy); color: #fff; }
+  header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+  .wm { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
+  .wm .k { color: var(--aqua); } .wm .go { color: var(--orange); }
+  header nav { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
+  header nav a { color: #C9D6EA; text-decoration: none; }
+  header nav a:hover { color: #fff; }
+  .hero { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; padding: 56px 0 40px; }
+  .hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; color: var(--navy); }
+  .hero p { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  .tagline { font-family: 'Fredoka', sans-serif; letter-spacing: 0.18em; color: var(--teal); font-size: 14px; margin: 0 0 12px; }
+  .hero img { width: 220px; height: 220px; }
+  h2 { color: var(--navy); font-size: 26px; margin: 48px 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--navy); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .private { margin: 0 0 20px; padding: 12px 16px; border-left: 4px solid var(--orange); background: #FFF6E8; border-radius: 6px; font-size: 15px; color: var(--text); }
+  .data { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 24px; }
+  .data li { margin: 10px 0; }
+  code { background: var(--mint); padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+  footer { margin-top: 64px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } .hero img { width: 140px; height: 140px; } .hero h1 { font-size: 30px; } header nav { gap: 12px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="assets/mark.svg" alt="" width="30" height="30">
+    <span class="wm"><span class="k">K</span>wanime<span class="go">Go</span></span>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#google-data">Google data</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="tagline">ONE MORE EPISODE</p>
+      <h1>A personal anime player for your PC, phone and TV</h1>
+      <p>KwanimeGo is an app for Windows, Android and Android TV. It shows anime catalogs and episodes from public anime websites, plays them in a built-in player, and remembers your list, history and where you stopped — optionally on all your devices through your own Google Drive.</p>
+      <p class="private">KwanimeGo is <b>private software</b> made by its developer for personal use. It is not published, sold or distributed, and is used only by the developer and people he personally invites. There are no downloads. This site only explains how the app handles data.</p>
+    </div>
+    <img src="assets/icon.svg" alt="KwanimeGo app icon: a frog holding a screen with a play button">
+  </section>
+
+  <h2 id="features">What KwanimeGo does</h2>
+  <div class="grid">
+    <div class="card"><h3>One app, three screens</h3><p>The same app on a Windows PC, an Android phone and an Android TV / Google TV box, with a TV layout made for the remote.</p></div>
+    <div class="card"><h3>Continue watching</h3><p>Your progress is saved every few seconds, so you can stop on the TV and continue on the phone from the same moment.</p></div>
+    <div class="card"><h3>All voice-overs in one list</h3><p>Episodes and voice-over options from several anime websites are combined into one list, with backup players if one does not respond.</p></div>
+    <div class="card"><h3>Your list and history</h3><p>Watching, planned, completed, on hold, dropped — kept locally and available offline.</p></div>
+    <div class="card"><h3>Sync through your own Drive</h3><p>Optional: the list and progress are synced between your devices through a hidden app folder in your Google Drive.</p></div>
+    <div class="card"><h3>No servers of ours</h3><p>There is no KwanimeGo account and no KwanimeGo cloud. The app talks directly to the websites and, if you connect it, to Google Drive.</p></div>
+  </div>
+
+  <h2 id="google-data">How KwanimeGo uses your Google data</h2>
+  <div class="data">
+    <ul>
+      <li>Connecting Google Drive is <b>optional</b>; the app works fully without it.</li>
+      <li>KwanimeGo asks for <code>https://www.googleapis.com/auth/drive.appdata</code> to <b>store and read its own sync files</b> — your anime list, ratings, watch history, playback progress and app settings — in a <b>hidden app folder</b> of your Google Drive. It <b>cannot see or change any other files</b> in your Drive. It also uses <code>openid</code> and <code>email</code> to show which Google account is connected.</li>
+      <li>The same data is kept <b>on your devices</b> so the app works offline. Sign-in tokens are kept in the system's protected storage.</li>
+      <li>Your data is <b>never sent to the developer or to any third party</b>, never sold, and never used for advertising or to train AI models.</li>
+      <li>You can disconnect Google Drive in the app at any time, delete the hidden app data in Google Drive settings, and revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    </ul>
+    <p>Details: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    KwanimeGo by maxpowerart ·
+    <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · Contact: <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>

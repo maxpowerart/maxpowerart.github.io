@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="66 75 380 380" width="380" height="380" role="img" aria-label="KwanimeGo">
+  <!-- mark without background, colours as in the logo -->
+    <path fill="#2EC4B6" transform="translate(-10 0)" d="M162 282C122 272 92 300 94 338C96 372 120 398 152 418C150 384 152 330 166 300Z"/>
+    <path fill="#2EC4B6" transform="translate(10 0)" d="M350 282C390 272 420 300 418 338C416 372 392 398 360 418C362 384 360 330 346 300Z"/>
+    <path fill="#2EC4B6" d="M134 266C134 186 188 150 256 150C324 150 378 186 378 266Z"/>
+    <circle cx="190" cy="144" r="54" fill="#2EC4B6"/>
+    <circle cx="322" cy="144" r="54" fill="#2EC4B6"/>
+    <circle cx="190" cy="144" r="32" fill="#0F2240"/>
+    <circle cx="322" cy="144" r="32" fill="#0F2240"/>
+    <circle cx="200" cy="133" r="10" fill="#FF9F1C"/>
+    <circle cx="332" cy="133" r="10" fill="#FF9F1C"/>
+    <circle cx="180" cy="157" r="5.5" fill="#FFFFFF"/>
+    <circle cx="312" cy="157" r="5.5" fill="#FFFFFF"/>
+    <path d="M224 204Q256 228 288 204" fill="none" stroke="#0F2240" stroke-width="12" stroke-linecap="round"/>
+    <rect x="136" y="240" width="240" height="200" rx="40" fill="#0F2240"/>
+    <rect x="158" y="262" width="196" height="132" rx="20" fill="#FFFFFF"/>
+    <path d="M241 305L241 351L281 328Z" fill="#FF9F1C" stroke="#FF9F1C" stroke-width="14" stroke-linejoin="round"/>
+    <rect x="166" y="411" width="180" height="12" rx="6" fill="#2B4170"/>
+    <rect x="166" y="411" width="114" height="12" rx="6" fill="#2EC4B6"/>
+    <circle cx="280" cy="417" r="14" fill="#FF9F1C"/>
+</svg>
