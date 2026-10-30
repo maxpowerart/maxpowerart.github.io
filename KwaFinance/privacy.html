@@ -53,14 +53,13 @@
     <thead><tr><th>Data</th><th>Source / permission</th><th>Why the app needs it</th></tr></thead>
     <tbody>
       <tr><td>Your Google account’s e-mail address and account ID</td><td>Google Sign-In (<code>openid</code>, <code>email</code>)</td><td>To show which account is connected.</td></tr>
-      <tr><td>KwaFinance’s own budget files: budget plan, transactions and their categories, savings records, settings</td><td>Google Drive API, files created by the app only (<code>https://www.googleapis.com/auth/drive.file</code>) — owner</td><td>To keep the budget in the owner’s Google Drive, sync it between devices and restore it after reinstalling.</td></tr>
-      <tr><td>The KwaFinance folder shared with you by the owner</td><td>Google Drive API, read-only (<code>https://www.googleapis.com/auth/drive.readonly</code>) — family viewer</td><td>To show the shared budget read-only. The app opens only that folder.</td></tr>
-      <tr><td>Wolt purchase receipts in Gmail: venue, items, prices, delivery and service fees, tip, amount paid, last 4 digits of the card, time of payment</td><td>Gmail API, read-only (<code>https://www.googleapis.com/auth/gmail.readonly</code>) — owner</td><td>To attach each delivery receipt to the matching card payment and show what was bought. The app searches only for messages from Wolt and opens only those.</td></tr>
+      <tr><td>KwaFinance’s own budget files: budget plan, transactions and their categories, savings records, settings</td><td>Google Drive API, app data folder only (<code>https://www.googleapis.com/auth/drive.appdata</code>)</td><td>To keep the budget in a hidden app folder of the owner’s Google Drive, sync it between devices and restore it after reinstalling. A phone signed in “as a reader” only reads these files.</td></tr>
+      <tr><td>Wolt purchase receipts in Gmail: venue, items, prices, delivery and service fees, tip, amount paid, last 4 digits of the card, time of payment</td><td>Gmail API, read-only (<code>https://www.googleapis.com/auth/gmail.readonly</code>) — owner’s phone only</td><td>To attach each delivery receipt to the matching card payment and show what was bought. The app searches only for messages from Wolt and opens only those.</td></tr>
       <tr><td>Bank notification SMS from the sender “TBC SMS”: amount, currency, merchant, card’s last 4 digits, balance, time</td><td>Android SMS permissions (<code>RECEIVE_SMS</code>, <code>READ_SMS</code>) — owner’s phone</td><td>To record card payments as they happen. Other SMS are ignored. One-time security codes are discarded immediately and never stored.</td></tr>
       <tr><td>Bank statement files (CSV) you choose to open in the app</td><td>Android file picker / share</td><td>To import the full list of account transactions.</td></tr>
     </tbody>
   </table>
-  <p>The Drive permission for the owner gives access <b>only to files that KwaFinance itself created</b>. The viewer’s read-only permission is used only to open the folder the owner shared. The Gmail permission is used only to search for and read Wolt receipts; no other messages are opened, and the app never sends, deletes or changes e-mails.</p>
+  <p>The Drive permission gives access <b>only to a hidden folder that belongs to KwaFinance</b>; the app cannot see, open, list or change any other files in Google Drive. The Gmail permission is used only to search for and read Wolt receipts; no other messages are opened, and the app never sends, deletes or changes e-mails.</p>
 
   <h2>2. How the information is used</h2>
   <ul>
@@ -74,14 +73,14 @@
   <ul>
     <li><b>On your phone</b>, in a local database inside the app’s private storage, so the app works offline.</li>
     <li><b>Sign-in tokens</b> are stored in encrypted app storage protected by the Android Keystore.</li>
-    <li><b>In the owner’s Google Drive</b>: small budget files in a <i>KwaFinance</i> folder created by the app. Full e-mails, full SMS texts and statement files are not uploaded; only the extracted transaction fields are.</li>
+    <li><b>In the owner’s Google Drive</b>: small budget files in KwaFinance’s hidden app data folder. Full e-mails, full SMS texts and statement files are not uploaded; only the extracted transaction fields are.</li>
     <li>There is no KwaFinance server or cloud. The app communicates directly with Google’s servers over HTTPS, and with the public exchange-rate service of the National Bank of Georgia (no personal data is sent there).</li>
   </ul>
 
   <h2>4. Sharing and third parties</h2>
   <ul>
     <li><b>Google.</b> The app sends requests to Google Sign-In, the Google Drive API and the Gmail API as described above. Google’s own privacy policy applies to data held by Google.</li>
-    <li><b>Family viewer.</b> The owner may share the KwaFinance Drive folder with a family member, who then sees the budget read-only. Sharing is controlled by the owner in Google Drive.</li>
+    <li><b>Family reader.</b> The owner may sign in on a family member’s phone with his own account “as a reader”; that phone shows the budget read-only and does not read SMS or Gmail.</li>
     <li>The app contains no analytics, advertising or tracking SDKs. No other third parties receive any data.</li>
   </ul>
 
@@ -92,7 +91,7 @@
   <ul>
     <li>Local data is kept until you delete it or uninstall the app.</li>
     <li><b>Disconnect Google:</b> Settings → Sources → Disconnect. This removes the sign-in token from the phone.</li>
-    <li><b>Delete the data in Google Drive:</b> delete the <i>KwaFinance</i> folder in Google Drive.</li>
+    <li><b>Delete the data in Google Drive:</b> open Google Drive → Settings → Manage apps → KwaFinance → Options → <i>Delete hidden app data</i>.</li>
     <li><b>Stop reading SMS:</b> turn the source off in the app or remove the SMS permission in Android settings.</li>
     <li><b>Revoke access</b> at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
@@ -110,7 +109,7 @@
   <p>maxpowerart — <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a></p>
 
   <div class="ru">
-    <b>Кратко по-русски.</b> KwaFinance — частное ПО для личного использования разработчиком и его семьёй, не публикуется и не распространяется. Приложение ведёт семейный бюджет: читает на телефоне владельца SMS банка TBC (одноразовые коды сразу отбрасываются), импортирует выписки, которые вы сами открываете, и находит в Gmail владельца только чеки Wolt. Данные хранятся на телефоне и в папке KwaFinance на Google Drive владельца; член семьи видит их только для чтения. Своего сервера нет, разработчик данных не получает, данные Google никому не передаются и не используются для рекламы или обучения моделей. Удалить данные: удалить папку KwaFinance на Drive, отключить источники в приложении или отозвать доступ на myaccount.google.com/permissions.
+    <b>Кратко по-русски.</b> KwaFinance — частное ПО для личного использования разработчиком и его семьёй, не публикуется и не распространяется. Приложение ведёт семейный бюджет: читает на телефоне владельца SMS банка TBC (одноразовые коды сразу отбрасываются), импортирует выписки, которые вы сами открываете, и находит в Gmail владельца только чеки Wolt. Данные хранятся на телефоне и в скрытой папке приложения на Google Drive владельца; на телефоне члена семьи можно войти тем же аккаунтом «как читатель» — только просмотр, без SMS и почты. Своего сервера нет, разработчик данных не получает, данные Google никому не передаются и не используются для рекламы или обучения моделей. Удалить данные: удалить скрытые данные приложения в настройках Google Drive, отключить источники в приложении или отозвать доступ на myaccount.google.com/permissions.
   </div>
 </main>
 </div>

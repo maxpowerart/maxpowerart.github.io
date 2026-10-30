@@ -69,16 +69,15 @@
     <div class="card"><h3>Actual spending, automatically</h3><p>Bank card SMS on the owner's phone and imported bank statements become transactions; the owner assigns each new merchant to a budget line once.</p></div>
     <div class="card"><h3>Delivery receipts</h3><p>Wolt receipts from the owner's Gmail are attached to the matching card payment, so it is clear what was actually bought.</p></div>
     <div class="card"><h3>Why we went over</h3><p>A report of unplanned spending, overruns, plan changes, currency losses and money taken from savings.</p></div>
-    <div class="card"><h3>Shared with the family</h3><p>The owner's data is synced through his own Google Drive; a family member can view it read-only.</p></div>
+    <div class="card"><h3>Shared with the family</h3><p>The owner's data is synced through a hidden app folder in his own Google Drive; a family member's phone can open it as a reader, read-only.</p></div>
     <div class="card"><h3>No servers of ours</h3><p>There is no KwaFinance account and no KwaFinance cloud. The app works on the phone and talks only to Google.</p></div>
   </div>
 
   <h2 id="google-data">How KwaFinance uses your Google data</h2>
   <div class="data">
     <ul>
-      <li><b>Google Drive, owner</b> — <code>https://www.googleapis.com/auth/drive.file</code>: to create and update KwaFinance's own budget files (a <i>KwaFinance</i> folder) in the owner's Drive. With this permission the app can access <b>only files it created</b>, not any other files in Drive.</li>
-      <li><b>Google Drive, family viewer</b> — <code>https://www.googleapis.com/auth/drive.readonly</code>: to <b>read</b> the KwaFinance folder that the owner has shared with the viewer. The app opens only that shared folder; it never changes, lists or reads any other files.</li>
-      <li><b>Gmail, owner</b> — <code>https://www.googleapis.com/auth/gmail.readonly</code>: to <b>find and read only Wolt purchase receipts</b> (messages from <code>info@wolt.com</code>) and take the venue, items, fees, amount, card and time from them. Other messages are not opened. Full e-mails are not stored; only the extracted receipt fields are saved.</li>
+      <li><b>Google Drive</b> — <code>https://www.googleapis.com/auth/drive.appdata</code>: to <b>store and read KwaFinance's own budget files</b> in a <b>hidden app folder</b> of the owner's Google Drive. The app <b>cannot see or change any other files</b> in Drive. A family member's phone can sign in to the same account <b>as a reader</b>: it only reads this folder and never changes it.</li>
+      <li><b>Gmail</b> (owner's phone only) — <code>https://www.googleapis.com/auth/gmail.readonly</code>: to <b>find and read only Wolt purchase receipts</b> (messages from <code>info@wolt.com</code>) and take the venue, items, fees, amount, card and time from them. Other messages are not opened. Full e-mails are not stored; only the extracted receipt fields are saved.</li>
       <li><code>openid</code> and <code>email</code>: to show which Google account is connected.</li>
       <li>Your data is <b>never sent to the developer or to any third party</b>, never sold, and never used for advertising or to train AI models.</li>
       <li>You can disconnect Google in the app at any time and revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
