@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KwaFinance — personal family budget for Android</title>
+<meta name="description" content="KwaFinance is a private family budget app for Android: plans spending from salary to salary, reads the owner's bank SMS and statements, matches Wolt receipts from the owner's Gmail, and syncs through the owner's own Google Drive.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<style>
+  @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url(assets/fredoka-latin-600-normal.woff2) format('woff2'); }
+  :root { --navy: #0F2240; --aqua: #2EC4B6; --teal: #158C82; --orange: #FF9F1C; --mint: #E6F5F4; --text: #1F2937; --muted: #5A6B86; --line: #E3E8EE; --bg: #F6F8FA; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--bg); }
+  a { color: var(--teal); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { background: var(--navy); color: #fff; }
+  header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+  .wm { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
+  .wm .k { color: var(--aqua); }
+  header nav { margin-left: auto; display: flex; gap: 20px; font-size: 15px; }
+  header nav a { color: #C9D6EA; text-decoration: none; }
+  header nav a:hover { color: #fff; }
+  .hero { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; padding: 56px 0 40px; }
+  .hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; color: var(--navy); }
+  .hero p { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  .tagline { font-family: 'Fredoka', sans-serif; letter-spacing: 0.18em; color: var(--teal); font-size: 14px; margin: 0 0 12px; }
+  .hero img { width: 220px; height: 220px; }
+  h2 { color: var(--navy); font-size: 26px; margin: 48px 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--navy); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .private { margin: 0 0 20px; padding: 12px 16px; border-left: 4px solid var(--orange); background: #FFF6E8; border-radius: 6px; font-size: 15px; color: var(--text); }
+  .data { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 24px; }
+  .data li { margin: 10px 0; }
+  code { background: var(--mint); padding: 1px 6px; border-radius: 4px; font-size: 14px; word-break: break-all; }
+  footer { margin-top: 64px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } .hero img { width: 140px; height: 140px; } .hero h1 { font-size: 30px; } header nav { gap: 12px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="assets/mark.svg" alt="" width="30" height="30">
+    <span class="wm"><span class="k">K</span>waFinance</span>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#google-data">Google data</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="tagline">EVERY COIN COUNTED</p>
+      <h1>A personal family budget, from salary to salary</h1>
+      <p>KwaFinance is an Android app that plans a family's spending for each salary period, records what was actually spent, and explains why the budget was exceeded. Spending is picked up from the owner's own bank SMS and statements, and food-delivery receipts from the owner's own Gmail.</p>
+      <p class="private">KwaFinance is <b>private software</b> made by its developer for personal use. It is not published, sold or distributed, and is used only by the developer and his family. There are no downloads. This site only explains how the app handles data.</p>
+    </div>
+    <img src="assets/icon.svg" alt="KwaFinance app icon: a frog holding a screen with budget bars and a coin">
+  </section>
+
+  <h2 id="features">What KwaFinance does</h2>
+  <div class="grid">
+    <div class="card"><h3>Plan by salary period</h3><p>Budget lines in several currencies, planned months ahead, with regular payments carried over from the previous period.</p></div>
+    <div class="card"><h3>Actual spending, automatically</h3><p>Bank card SMS on the owner's phone and imported bank statements become transactions; the owner assigns each new merchant to a budget line once.</p></div>
+    <div class="card"><h3>Delivery receipts</h3><p>Wolt receipts from the owner's Gmail are attached to the matching card payment, so it is clear what was actually bought.</p></div>
+    <div class="card"><h3>Why we went over</h3><p>A report of unplanned spending, overruns, plan changes, currency losses and money taken from savings.</p></div>
+    <div class="card"><h3>Shared with the family</h3><p>The owner's data is synced through his own Google Drive; a family member can view it read-only.</p></div>
+    <div class="card"><h3>No servers of ours</h3><p>There is no KwaFinance account and no KwaFinance cloud. The app works on the phone and talks only to Google.</p></div>
+  </div>
+
+  <h2 id="google-data">How KwaFinance uses your Google data</h2>
+  <div class="data">
+    <ul>
+      <li><b>Google Drive, owner</b> — <code>https://www.googleapis.com/auth/drive.file</code>: to create and update KwaFinance's own budget files (a <i>KwaFinance</i> folder) in the owner's Drive. With this permission the app can access <b>only files it created</b>, not any other files in Drive.</li>
+      <li><b>Google Drive, family viewer</b> — <code>https://www.googleapis.com/auth/drive.readonly</code>: to <b>read</b> the KwaFinance folder that the owner has shared with the viewer. The app opens only that shared folder; it never changes, lists or reads any other files.</li>
+      <li><b>Gmail, owner</b> — <code>https://www.googleapis.com/auth/gmail.readonly</code>: to <b>find and read only Wolt purchase receipts</b> (messages from <code>info@wolt.com</code>) and take the venue, items, fees, amount, card and time from them. Other messages are not opened. Full e-mails are not stored; only the extracted receipt fields are saved.</li>
+      <li><code>openid</code> and <code>email</code>: to show which Google account is connected.</li>
+      <li>Your data is <b>never sent to the developer or to any third party</b>, never sold, and never used for advertising or to train AI models.</li>
+      <li>You can disconnect Google in the app at any time and revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    </ul>
+    <p>Details: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    KwaFinance by maxpowerart ·
+    <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · Contact: <a href="mailto:thepowerart@gmail.com">thepowerart@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
